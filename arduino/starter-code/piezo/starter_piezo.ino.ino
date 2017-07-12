@@ -1,15 +1,16 @@
 #define NOTE_C4 262
-#define NOTE_G3 196
-#define NOTE_A3 220
+#define NOTE_D4 294
+#define NOTE_E4 330
+#define NOTE_G4 392
 
 int speakerPin = 8;
 // notes for melody
 int melody[] = {
-  NOTE_C4, NOTE_G3, NOTE_A3
-};
+  NOTE_E4, NOTE_D4, NOTE_C4, NOTE_D4, NOTE_E4, NOTE_E4, NOTE_E4, NOTE_D4, NOTE_D4, NOTE_D4, NOTE_E4, NOTE_E4, NOTE_G4,
+  NOTE_E4, NOTE_D4, NOTE_C4, NOTE_D4, NOTE_E4, NOTE_E4, NOTE_E4, NOTE_D4, NOTE_D4, NOTE_E4, NOTE_D4, NOTE_C4
 
 int noteDurations[] {
-  4,8,8
+  4,4,4,4,4,2,4,4,2,4,4,24,4,4,4,4,4,2,4,4,4,4,1
 };
 
 void setup() {
@@ -19,7 +20,7 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  for (int thisNote = 0; thisNote < 3; thisNote++) {
+  for (int thisNote = 0; thisNote < 25; thisNote++) {
     // Calculate note duration, take one second and divide it by the note type
     int noteDuration = 1000 / noteDurations[thisNote];
     tone(speakerPin, melody[thisNote], noteDuration);
